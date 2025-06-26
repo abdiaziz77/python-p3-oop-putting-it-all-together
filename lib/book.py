@@ -3,22 +3,11 @@ class Book:
         self.title = title
         self.page_count = page_count
 
-    def get_title(self):
-        return self._title
-    
-    def set_title(self, value):
-        if isinstance(value, str):
-            self._title = value
-        else:
-            print("Title must be a string.")
-
-    title = property(get_title, set_title)
-
     def get_page_count(self):
         return self._page_count
 
     def set_page_count(self, value):
-        if isinstance(value, int):
+        if isinstance(value, int) and value > 0:
             self._page_count = value
         else:
             print("page_count must be an integer")
